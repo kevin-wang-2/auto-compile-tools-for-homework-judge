@@ -2,6 +2,9 @@
  * A demonstration of this compiler tool.
  */
 
-let tool = require("homeworkCompiler.js").compile;
+let tool = require("./homeworkCompiler.js");
 
-tool("C");
+tool.compile("C");
+tool.compileEvent.on("batchFinish", () => {
+    console.log("Job finished.");
+});
